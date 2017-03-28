@@ -1,0 +1,28 @@
+Promotions will be available in Kounta after the successful CBA test 
+1.	We received webhook from Kounta as per how we do it today
+2.	We run GET PROMOTIONS FOR A SITE GET /v1/cba/sites/123/promotions.json to get both active and inactive promotions
+3.	We run GET ACTIVE PROMOTIONS FOR A SITE GET /v1/cba/sites/123.json to get the promotion ids for the active promotions, we always select the first one returned
+4.	Using the promotion_id obtained from step 3, we extract the active promotion from the list of promotions obtained in step 2 and place it in Firebase
+
+There are two types of Promotions: Upsell and Discount. 
+
+Upsell promotion contains both ‘Triggers’ and ‘Apply’ sections of API. Upsell is triggered by the event (e.g. customer buys coffee and gets the discounted muffin)
+
+Discount promotion only contains the ‘Apply’ section of API
+
+Discount: 
+Trigger: always
+Redemption: PERCENT ONLY
+- on multiple categories
+- on multiple products
+- on whole order
+Upsell: 
+Trigger: ONLY USE QTY
+- on multiple categories
+- on multiple products
+Redemption: PERCENT or DOLLAR OFF
+- single product
+- single category
+
+CBA only supports Product Ids and Category Ids
+‘customer_ids’, ‘customer_tags’, ‘customer_linked’, "product_tags” are not supported by CBA
