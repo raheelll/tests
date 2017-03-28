@@ -6,9 +6,9 @@ Promotions will be available in Kounta after the successful CBA test
 
 There are two types of Promotions: Upsell and Discount. 
 
-Upsell promotion contains both ‘Triggers’ and ‘Apply’ sections of API. Upsell is triggered by the event (e.g. customer buys coffee and gets the discounted muffin)
+Upsell promotion contains both â€˜Triggersâ€™ and â€˜Applyâ€™ sections of API. Upsell is triggered by the event (e.g. customer buys coffee and gets the discounted muffin)
 
-Discount promotion only contains the ‘Apply’ section of API
+Discount promotion only contains the â€˜Applyâ€™ section of API
 
 Discount: 
 Trigger: always
@@ -25,4 +25,15 @@ Redemption: PERCENT or DOLLAR OFF
 - single category
 
 CBA only supports Product Ids and Category Ids
-‘customer_ids’, ‘customer_tags’, ‘customer_linked’, "product_tags” are not supported by CBA
+â€˜customer_idsâ€™, â€˜customer_tagsâ€™, â€˜customer_linkedâ€™, "product_tagsâ€ are not supported by CBA
+
+-------------------------------------------------------
+
+
+https://cbatest.kounta.com/
+Michael@plutuscommerce.com
+diablo123
+
+
+
+
