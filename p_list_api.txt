@@ -1,0 +1,90 @@
+{
+	"menus" : {...},
+	"sites" : {...},
+	"orders" : {...},
+	"promotions" : {
+		"v1" : { 
+			"22489" : { // site id
+				"1" : { // promotion id
+					"type" : "upsell",
+					"name" : "First upsell promo",
+					"image" : "https://www.upsell.com/image1.png",
+					"trigger" : {
+						"product_id" : 123, // single product_id or category_id
+						"quantity" : 3 // we are not supporting amount
+					},
+					"apply" : {
+						"category_id" : 11231, // single product_id or category_id
+						"percent" : 9.5 // this can also be ($)"amount" : 2.5
+					}
+				}
+			},
+			"22490" : { // site id
+				"5" : { // promotion id
+					"type" : "upsell",
+					"name" : "First upsell promo",
+					"image" : "https://www.upsell.com/image1.png",
+					"trigger" : {
+						"category_id" : 123, // single product_id or category_id
+						"quantity" : 1
+					},
+					"apply" : {
+						"product_id" : 11231, // single product_id or category_id
+						"percent" : 50 // this can also be ($)"amount" : 2.5
+					}
+				}
+			},
+			"22513" : {
+				"2" : {
+					"type" : "discount",
+					"name" : "This is a discount promo",
+					"image" : "https://www.upsell.com/image1.png",
+					"apply" : {
+						"order_total" : true, // OR a list of product_ids OR a list category_ids
+						"percent" : 9.5 // percent only, "amount" doesn't apply
+					}
+				}
+			},
+			"22514" : {
+				"3" : {
+					"type" : "discount",
+					"name" : "This is a discount promo",
+					"image" : "https://www.upsell.com/image1.png",
+          "apply": {
+            "product_ids": {
+              "123": true,
+              "124": true
+            },
+            "percent": 2.5 // percent only, "amount" doesn't apply
+          }
+				}
+			},
+			"22515" : {
+				"6" : {
+					"type" : "discount",
+					"name" : "This is a discount promo",
+					"image" : "https://www.upsell.com/image1.png",
+          "apply": {
+            "category_ids": {
+              "123": true,
+              "124": true
+            },
+            "percent": 12.5 // percent only, "amount" doesn't apply
+          }
+				}
+			}
+		}
+	}
+}
+
+
+Few rules for promotion v1:
+
+- Type can be either "upsell" or "discount"
+
+- For 'upsell', the 'trigger' and the 'apply' can only have a single value of 'product_id' or 'category_id'.
+
+- For 'discount', there is no need for 'trigger', 'apply' can have a list of 'product_ids' OR a list of 'category_ids' OR it can be applied to the 'order_total'.
+
+- Only put active promotions in Firebase. There can only be 1 active promotion per site.
+
