@@ -88,3 +88,6 @@ Few rules for promotion v1:
 
 - Only put active promotions in Firebase. There can only be 1 active promotion per site.
 
+
+http://localhost/cbav2/admin/v8/Promotion/PromotionList?access_token=4a912042b616a6d05b00ceaa09447024f4535e3a&refresh_token=b40669555406b4f51b7b832d4cd610510c25259a
+
