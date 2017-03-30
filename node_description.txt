@@ -1,39 +1,54 @@
-Promotions will be available in Kounta after the successful CBA test 
-1.	We received webhook from Kounta as per how we do it today
-2.	We run GET PROMOTIONS FOR A SITE GET /v1/cba/sites/123/promotions.json to get both active and inactive promotions
-3.	We run GET ACTIVE PROMOTIONS FOR A SITE GET /v1/cba/sites/123.json to get the promotion ids for the active promotions, we always select the first one returned
-4.	Using the promotion_id obtained from step 3, we extract the active promotion from the list of promotions obtained in step 2 and place it in Firebase
-
-There are two types of Promotions: Upsell and Discount. 
-
-Upsell promotion contains both ‘Triggers’ and ‘Apply’ sections of API. Upsell is triggered by the event (e.g. customer buys coffee and gets the discounted muffin)
-
-Discount promotion only contains the ‘Apply’ section of API
-
-Discount: 
-Trigger: always
-Redemption: PERCENT ONLY
-- on multiple categories
-- on multiple products
-- on whole order
-Upsell: 
-Trigger: ONLY USE QTY
-- on multiple categories
-- on multiple products
-Redemption: PERCENT or DOLLAR OFF
-- single product
-- single category
-
-CBA only supports Product Ids and Category Ids
-‘customer_ids’, ‘customer_tags’, ‘customer_linked’, "product_tags” are not supported by CBA
-
--------------------------------------------------------
-
-
-https://cbatest.kounta.com/
-Michael@plutuscommerce.com
-diablo123
-
-
-
-
+{
+  "v1": {
+    "22514": {
+      "5": {
+        "type": "discount",
+        "name": "first upsell promo",
+        "image": "https://s3-ap-northeast-1.amazonaws.com/kounta/files/9377f5b4-57bb-f2ae-398d-d910d093a8f2/9c435e9b-4fc6-f8a1-1fe2-68b0c230fd80.png",
+        "apply": {
+          "order_total": true,
+          "percent": 10
+        }
+      }
+    },
+    "22515": {
+      "6": {
+        "type": "upsell",
+        "name": "first discounts promos",
+        "image": "",
+        "trigger": {
+          "category_ids": [
+            95076
+          ],
+          "quantity": 20
+        },
+        "apply": {
+          "categrory_ids": {
+            "95095": true
+          },
+          "percent": 72
+        }
+      }
+    },
+    "22541": {
+      "12": {
+        "type": "upsell",
+        "name": "1 category percentage Upsell - buy any products in Hot Drinks Category get 20% discount on a cake",
+        "image": "",
+        "trigger": {
+          "category_ids": [
+            95111,
+            95113
+          ],
+          "quantity": 5
+        },
+        "apply": {
+          "product_ids": {
+            "1863876": true
+          },
+          "percent": 0
+        }
+      }
+    }
+  }
+}
