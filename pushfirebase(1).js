@@ -113,7 +113,11 @@ var promotionfirebase = function(company,site){
 }
 
 module.exports = {promotionfirebase};
-
+  for(var j = 0;j<triggerss[0].product_category_ids.length;j++){
+         //console.info(triggerss[0].product_category_ids[j]);
+    
+         triggers.category_id[triggerss[0].product_category_ids[j]]=true;
+    }
 
 ///
 https://jsfiddle.net/5cx0258g/6/
