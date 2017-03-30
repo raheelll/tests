@@ -113,3 +113,7 @@ var promotionfirebase = function(company,site){
 }
 
 module.exports = {promotionfirebase};
+
+
+///
+https://jsfiddle.net/5cx0258g/6/
