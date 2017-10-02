@@ -1,2 +1,6 @@
 https://xd.adobe.com/view/a42ee0c5-6b36-42cd-bcb9-2ee88b0d0306/
 https://xd.adobe.com/view/54036cd7-e4e7-44bd-994d-f454c4415dc5/
+
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDc0WtGMVywd1ATs0GFDrMwx8UyNw7y7ic"></script>
+    <script type="text/javascript" src="{{asset('pocketpos_assets/admin/js/jquery.ui.addresspicker.js')}}"></script>
