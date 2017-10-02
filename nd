@@ -58,3 +58,106 @@ https://xd.adobe.com/view/54036cd7-e4e7-44bd-994d-f454c4415dc5/
 
 </body>
 </html>
+********************************latest test*******************************
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Map Address</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDc0WtGMVywd1ATs0GFDrMwx8UyNw7y7ic"></script>
+    <script type="text/javascript" src="jquery.ui.addresspicker.js"></script>
+</head>
+<body>
+	<div id="map_canvas" style="width:400px; height:400px; margin-left:80px;"></div><br>
+    <div id="map_canvas2" style="width:400px; height:400px; margin-left:80px;"></div>
+<script type="text/javascript">
+	/* jQuery(function(){
+       setTimeout(initialize,700);
+   });*/
+
+	function initialize() {
+	    // google map...
+	    var address ="Mamukanjan";
+	    var addressBar ="Faisalabad";
+	    var map;
+	    //
+	     var latlng = new google.maps.LatLng(0.0, 0.0);
+   		 var latlng2 = new google.maps.LatLng(0.0,0.0);
+	    var myOptions = {
+			        zoom: 13,
+			        center: latlng,
+			        mapTypeId: google.maps.MapTypeId.ROADMAP
+			    };
+	     var myOptions2 ={
+			        zoom: 17,
+			        center: latlng2,
+			        mapTypeId: google.maps.MapTypeId.ROADMAP
+			    };
+	    var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+	    var map2 = new google.maps.Map(document.getElementById("map_canvas2"),myOptions2);
+	    var geocoder = new google.maps.Geocoder();
+	    var geocoder1 = new google.maps.Geocoder();
+	    geocoder.geocode( { 'address': address}, function(results, status) {
+	      if (status == 'OK') {
+	      	console.log(results[0].geometry.location);
+	        map.setCenter(results[0].geometry.location);
+	        var marker = new google.maps.Marker({
+	            map: map,
+	            position: results[0].geometry.location
+	        });
+	      } else {
+	        alert('Geocode was not successful for the following reason: ' + status);
+	      }
+	    });
+	    //
+	    geocoder1.geocode( { 'address': addressBar}, function(results, status) {
+	      if (status == 'OK') {
+	      	console.log(results[0].geometry.location);
+	        map2.setCenter(results[0].geometry.location);
+	        var marker = new google.maps.Marker({
+	            map: map2,
+	            position: results[0].geometry.location
+	        });
+	      } else {
+	        alert('Geocode was not successful for the following reason: ' + status);
+	      }
+	    });
+	    //
+	    //
+	    // geocoder = new google.maps.Geocoder();
+	    // console.log(geocoder);
+	    //  var latlng = new google.maps.LatLng(31.54972, 74.34361);
+   		//  var latlng2 = new google.maps.LatLng(31.421045	,73.089294);
+   		//   var myOptions = {
+			  //       zoom: 13,
+			  //       center: latlng,
+			  //       mapTypeId: google.maps.MapTypeId.ROADMAP
+			  //   };
+			  //   var myOptions2 ={
+			  //       zoom: 17,
+			  //       center: latlng2,
+			  //       mapTypeId: google.maps.MapTypeId.ROADMAP
+			  //   };
+	    // var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+   		// var map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
+   		//  var myMarker = new google.maps.Marker(
+		   //  {
+		   //      position: latlng,
+		   //      map: map,
+		   //      title:"Barnett Park"
+		   // });
+
+		   //  var myMarker2 = new google.maps.Marker(
+		   //  {
+		   //      position: latlng2,
+		   //      map: map2,
+		   //      title:"Bill Fredrick Park at Turkey Lake"
+		   //  });
+	    //
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script> 
+
+</body>
+</html>
