@@ -1,6 +1,19 @@
 http://blog.hazaveh.net/2016/03/laravel-5-manual-pagination-from-array/
 
+------------data-----------
+ <div class="mpSelectBox"> 
+                                  <span>
+                                    @if(isset($page_limit))
+                                                   {{$page_limit}} 
+                                                @endif</span>
+                                    <select class="page_limit pgination-select" onchange="page_limit(this)">
+                                        <option value="20 Entries per page" @if($page_limit == 20) selected @endif>20 Entries per page</option>
+                                        <option value="30 Entries per page" @if($page_limit == 30) selected @endif>30 Entries per page</option>
+                                        <option value="40 Entries per page" @if($page_limit == 40) selected @endif>40 Entries per page</option>
+                                    </select>
 
+                                </div>
+----------
 https://xd.adobe.com/view/a42ee0c5-6b36-42cd-bcb9-2ee88b0d0306/
 https://xd.adobe.com/view/54036cd7-e4e7-44bd-994d-f454c4415dc5/
 
