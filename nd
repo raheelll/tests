@@ -1,3 +1,4 @@
+http://jsfiddle.net/ZYC9v/27/
 $("#docFile").on('change',function(){
                 //var fileName = $(this).val();
                 var file = this.files[0];
