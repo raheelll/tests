@@ -1,3 +1,4 @@
+https://jsfiddle.net/cma5664q/10/
 http://jsfiddle.net/ZYC9v/27/
 $("#docFile").on('change',function(){
                 //var fileName = $(this).val();
