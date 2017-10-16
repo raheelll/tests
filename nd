@@ -1,3 +1,31 @@
+$("#docFile").on('change',function(){
+                //var fileName = $(this).val();
+                var file = this.files[0];
+                var form = new FormData();
+                form.append('image', file);
+                console.log(form);
+                //var form_data = document.getElementById("docFile").files[0].name;
+               // console.log(form_data);
+                    //console.log(fileName);
+                    $.ajax({
+                        url:    '{{url("pocketpos/file/upload")}}',
+                        headers: {"X-CSRF-TOKEN": "{{csrf_token()}}"},
+                        type: "POST",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        data : form,
+                        success: function(response){
+                            console.log(response);
+                        }
+                            });
+                   
+                    });
+
+<input type="hidden" name="" id="fileId" value="4">
+<input type="hidden" name="_token" value="{{csrf_token()}}" />
+ <input type="file" name="image" id="docFile"  >
+-------------------------------------
 apikey: UnVvxVBtucrpNNcJnvjtYIeQ9nJ6AlvL 
 twilio
 
