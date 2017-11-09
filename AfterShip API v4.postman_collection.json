@@ -1,0 +1,616 @@
+{
+	"id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+	"name": "AfterShip API v4",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"id": "065c465d-4c3a-e823-4d43-18d52de7b0d1",
+			"name": "Couriers",
+			"description": "",
+			"order": [
+				"6cfe5f3c-f040-bcf8-e4f0-82c0ed350089",
+				"3024ef7a-2976-6483-f375-f4644fdeab7d",
+				"3daf6c5d-1812-5311-0f35-0cf903004c2f"
+			],
+			"owner": "1202330",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folders_order": []
+		},
+		{
+			"id": "6a6be920-3012-a66c-eaa2-b4a9cf4d76b8",
+			"name": "Last Checkpoint",
+			"description": "",
+			"order": [
+				"1fa78df9-690a-1adb-d795-a96d35eb6d2c",
+				"e19de2d3-307b-898b-1d8a-061d7f8870d0"
+			],
+			"owner": "1202330",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folders_order": []
+		},
+		{
+			"id": "b9cb5f39-4f54-630a-443c-c06df8ca064b",
+			"name": "Notifications",
+			"description": "",
+			"order": [
+				"b120bc6b-e456-8507-d5a8-16853ac8ec76",
+				"aeb5c746-a917-72a4-9f6b-12f7b7565552",
+				"653c4071-a46f-28f6-d5bd-43ce9030204c",
+				"05b312d2-09c0-69de-d37a-0c1d184605c5"
+			],
+			"owner": "1202330",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folders_order": []
+		},
+		{
+			"id": "32d309f0-9131-9804-3592-6a1ed0d53897",
+			"name": "Trackings",
+			"description": "",
+			"order": [
+				"f4355220-db05-777c-91c1-e374b1a8c211",
+				"2b59ef85-3b04-510d-d5aa-31a7b4a9dea8",
+				"997acd03-7fd7-2ea1-d926-cf99465b088e",
+				"f117d548-3a1d-c514-6c54-8dbc374713bb",
+				"351d1fb9-007d-f2e6-dcbe-920e2f68f7e1",
+				"4b4f5dae-3f3c-7dd9-d6cd-042b898c7d85"
+			],
+			"owner": "1202330",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folders_order": []
+		}
+	],
+	"timestamp": 1477471386309,
+	"owner": "1202330",
+	"public": false,
+	"folders_order": [],
+	"hasRequests": true,
+	"requests": [
+		{
+			"id": "05b312d2-09c0-69de-d37a-0c1d184605c5",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/notifications/:id",
+			"preRequestScript": null,
+			"pathVariables": {
+				"id": ""
+			},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987509128,
+			"name": "/notifications/:id",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"notification\": {\n        \"emails\": [\"user1@example.com\",\"user2@example.com\",\"invalid EMail @ Gmail. com\"],\n        \"smses\": [\"+85291239123\", \"+85261236123\", \"Invalid Mobile Phone Number\"]\n    }\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "b9cb5f39-4f54-630a-443c-c06df8ca064b"
+		},
+		{
+			"id": "1fa78df9-690a-1adb-d795-a96d35eb6d2c",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/last_checkpoint/:slug/:tracking_number",
+			"folder": "6a6be920-3012-a66c-eaa2-b4a9cf4d76b8",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "slug",
+					"value": ""
+				},
+				{
+					"description": "",
+					"key": "tracking_number",
+					"value": ""
+				}
+			],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230947136,
+			"name": "/last_checkpoint/:slug/:tracking_number",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": []
+		},
+		{
+			"id": "2b59ef85-3b04-510d-d5aa-31a7b4a9dea8",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/trackings/:slug/:tracking_number",
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987521469,
+			"name": "/trackings/:slug/:tracking_number",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"tracking\": {\n        \"slug\": \"dhl\",\n        \"tracking_number\": \"123456789\",\n        \"title\": \"Hello Title\",\n        \"smses\": [\n            \"+18555072509\",\n            \"+18555072501\"\n        ],\n        \"emails\": [\n            \"email@yourdomain.com\",\n            \"another_email@yourdomain.com\"\n        ],\n        \"custom_fields\": {\n            \"product_name\": \"iPhone Case\",\n            \"product_price\": \"USD19.99\"\n        }\n    }\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897"
+		},
+		{
+			"id": "3024ef7a-2976-6483-f375-f4644fdeab7d",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/couriers/all",
+			"folder": "065c465d-4c3a-e823-4d43-18d52de7b0d1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230791874,
+			"name": "/couriers/all",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": []
+		},
+		{
+			"id": "351d1fb9-007d-f2e6-dcbe-920e2f68f7e1",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/trackings/:slug/:tracking_number",
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987538648,
+			"name": "/trackings/:slug/:tracking_number",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"tracking\": {\n\t\t\"title\": \"Hello updated title\"\n    }\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897"
+		},
+		{
+			"id": "3daf6c5d-1812-5311-0f35-0cf903004c2f",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/couriers/detect",
+			"preRequestScript": null,
+			"pathVariables": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987470382,
+			"name": "/couriers/detect",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n\t\"tracking\": {\n\t\t\"tracking_number\": \"822018902890962993\"\t\n\t}\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "065c465d-4c3a-e823-4d43-18d52de7b0d1"
+		},
+		{
+			"id": "4b4f5dae-3f3c-7dd9-d6cd-042b898c7d85",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/trackings/:slug/:tracking_number/retrack",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "slug",
+					"value": ""
+				},
+				{
+					"description": "",
+					"key": "tracking_number",
+					"value": ""
+				}
+			],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510231100260,
+			"name": "/trackings/:slug/:tracking_number/retrack",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{}"
+		},
+		{
+			"id": "653c4071-a46f-28f6-d5bd-43ce9030204c",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/notifications/:slug/:tracking_number/remove",
+			"folder": "b9cb5f39-4f54-630a-443c-c06df8ca064b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "slug",
+					"value": ""
+				},
+				{
+					"description": "",
+					"key": "tracking_number",
+					"value": ""
+				}
+			],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230961522,
+			"name": "/notifications/:slug/:tracking_number/remove",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"notification\": {\n        \"emails\": [\"user1@example.com\",\"user2@example.com\",\"invalid EMail @ Gmail. com\"],\n        \"smses\": [\"+85291239123\", \"+85261236123\", \"Invalid Mobile Phone Number\"]\n    }\n}"
+		},
+		{
+			"id": "6cfe5f3c-f040-bcf8-e4f0-82c0ed350089",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/couriers",
+			"folder": "065c465d-4c3a-e823-4d43-18d52de7b0d1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230780409,
+			"name": "/couriers",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": []
+		},
+		{
+			"id": "997acd03-7fd7-2ea1-d926-cf99465b088e",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/trackings",
+			"preRequestScript": null,
+			"pathVariables": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987526903,
+			"name": "/trackings",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"tracking\": {\n        \"slug\": \"dhl\",\n        \"tracking_number\": \"123456789\",\n        \"title\": \"Hello Title\",\n        \"smses\": [\n            \"+18555072509\",\n            \"+18555072501\"\n        ],\n        \"emails\": [\n            \"email@yourdomain.com\",\n            \"another_email@yourdomain.com\"\n        ],\n        \"custom_fields\": {\n            \"product_name\": \"iPhone Case\",\n            \"product_price\": \"USD19.99\"\n        }\n    }\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897"
+		},
+		{
+			"id": "aeb5c746-a917-72a4-9f6b-12f7b7565552",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/notifications/:slug/:tracking_number/add",
+			"folder": "b9cb5f39-4f54-630a-443c-c06df8ca064b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "slug",
+					"value": ""
+				},
+				{
+					"description": "",
+					"key": "tracking_number",
+					"value": ""
+				}
+			],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230957603,
+			"name": "/notifications/:slug/:tracking_number/add",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"notification\": {\n        \"emails\": [\"user1@example.com\",\"user2@example.com\",\"invalid EMail @ Gmail. com\"],\n        \"smses\": [\"+85291239123\", \"+85261236123\", \"Invalid Mobile Phone Number\"]\n    }\n}"
+		},
+		{
+			"id": "b120bc6b-e456-8507-d5a8-16853ac8ec76",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/notifications/dhl/7303858788",
+			"folder": "b9cb5f39-4f54-630a-443c-c06df8ca064b",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510231171868,
+			"name": "/notifications/:slug/:tracking_number",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": []
+		},
+		{
+			"id": "e19de2d3-307b-898b-1d8a-061d7f8870d0",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/last_checkpoint/:slug/:tracking_number?fields=message,slug",
+			"folder": "6a6be920-3012-a66c-eaa2-b4a9cf4d76b8",
+			"queryParams": [
+				{
+					"key": "fields",
+					"value": "message,slug",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": null,
+			"pathVariables": {
+				"slug": "",
+				"tracking_number": ""
+			},
+			"pathVariableData": [
+				{
+					"description": "",
+					"key": "slug",
+					"value": ""
+				},
+				{
+					"description": "",
+					"key": "tracking_number",
+					"value": ""
+				}
+			],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230944949,
+			"name": "/last_checkpoint/:slug/:tracking_number?fields=x,y",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": []
+		},
+		{
+			"id": "f117d548-3a1d-c514-6c54-8dbc374713bb",
+			"headers": "Content-Type: application/json\naftership-api-key: {{apiKey}}\n",
+			"url": "https://api.aftership.com/v4/trackings?fields=slug,tag,last_updated_at,source",
+			"preRequestScript": null,
+			"pathVariables": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": [],
+			"time": 1477987533608,
+			"name": "/trackings?fields=x,y",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"tracking\": {\n        \"slug\": \"dhl\",\n        \"tracking_number\": \"123456789\",\n        \"title\": \"Hello Title\",\n        \"smses\": [\n            \"+18555072509\",\n            \"+18555072501\"\n        ],\n        \"emails\": [\n            \"email@yourdomain.com\",\n            \"another_email@yourdomain.com\"\n        ],\n        \"custom_fields\": {\n            \"product_name\": \"iPhone Case\",\n            \"product_price\": \"USD19.99\"\n        }\n    }\n}",
+			"collection_id": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897"
+		},
+		{
+			"id": "f4355220-db05-777c-91c1-e374b1a8c211",
+			"headers": "Content-Type: application/json\naftership-api-key: fede6923-651f-4bba-9550-32c9b8d3875f\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "aftership-api-key",
+					"value": "fede6923-651f-4bba-9550-32c9b8d3875f",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/trackings",
+			"folder": "32d309f0-9131-9804-3592-6a1ed0d53897",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1510230968755,
+			"name": "/trackings",
+			"description": "",
+			"collectionId": "b976d31c-dd23-513f-4630-d7eef9e465ca",
+			"responses": [],
+			"rawModeData": "{\n    \"tracking\": {\n        \"slug\": \"dhl\",\n        \"tracking_number\": \"7303858788\",\n        \"title\": \"Hello Title\",\n        \"smses\": [\n            \"+18555072509\",\n            \"+18555072501\"\n        ],\n        \"emails\": [\n            \"email@yourdomain.com\",\n            \"another_email@yourdomain.com\"\n        ],\n        \"custom_fields\": {\n            \"product_name\": \"iPhone Case\",\n            \"product_price\": \"USD19.99\"\n        }\n    }\n}"
+		}
+	]
+}

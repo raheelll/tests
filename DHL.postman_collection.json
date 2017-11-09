@@ -1,0 +1,90 @@
+{
+	"id": "4230a051-e18f-95eb-cf3f-3b93f19da7e4",
+	"name": "DHL",
+	"description": "",
+	"order": [
+		"3702f26b-20e9-35ec-55f6-c8d3aec7dd52",
+		"5abd13e7-e7b5-55d8-9ab0-dc904d78efce"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1510203992826,
+	"owner": "1202330",
+	"public": false,
+	"requests": [
+		{
+			"id": "3702f26b-20e9-35ec-55f6-c8d3aec7dd52",
+			"headers": "postmen-api-key: 7707efb6-9db7-4780-a0f7-7ca56fe46834\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "postmen-api-key",
+					"value": "7707efb6-9db7-4780-a0f7-7ca56fe46834",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://sandbox-api.postmen.com/v3/rates",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4230a051-e18f-95eb-cf3f-3b93f19da7e4",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Get rates ",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1510211831774,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"async\": false,\n  \"shipper_accounts\": [\n    {\n      \"id\": \"07b55d06-48af-4b02-a6b0-1e311e22b1e6\"\n    }\n  ],\n  \"is_document\": false,\n  \"shipment\": {\n    \"ship_from\": {\n      \"contact_name\": \"[Aramex] Contact name\",\n      \"company_name\": \"[Aramex] Testing Company\",\n      \"street1\": \"Testing Street\",\n      \"city\": \"Mumbai\",\n      \"state\": \"MH\",\n      \"postal_code\": \"400064\",\n      \"country\": \"IND\",\n      \"type\": \"business\",\n      \"phone\": \"+919428293450\",\n      \"street2\": null,\n      \"tax_id\": null,\n      \"street3\": null,\n      \"email\": \"aramext@test.com\",\n      \"fax\": null\n    },\n    \"ship_to\": {\n      \"contact_name\": \"Dr. Moises Corwin\",\n      \"phone\": \"1-140-225-6410\",\n      \"email\": \"Giovanna42@yahoo.com\",\n      \"street1\": \"28292 Daugherty Orchard\",\n      \"postal_code\": \"560034\",\n      \"city\": \"Amman\",\n      \"country\": \"JOR\",\n      \"type\": \"residential\"\n    },\n    \"parcels\": [\n      {\n        \"description\": \"Food XS\",\n        \"box_type\": \"custom\",\n        \"weight\": {\n          \"value\": 2,\n          \"unit\": \"kg\"\n        },\n        \"dimension\": {\n          \"width\": 20,\n          \"height\": 40,\n          \"depth\": 40,\n          \"unit\": \"cm\"\n        },\n        \"items\": [\n          {\n            \"description\": \"Food Bar\",\n            \"origin_country\": \"USA\",\n            \"quantity\": 2,\n            \"price\": {\n              \"amount\": 3,\n              \"currency\": \"USD\"\n            },\n            \"weight\": {\n              \"value\": 0.6,\n              \"unit\": \"kg\"\n            },\n            \"sku\": \"imac2014\"\n          }\n        ]\n      }\n    ]\n  }\n}"
+		},
+		{
+			"id": "5abd13e7-e7b5-55d8-9ab0-dc904d78efce",
+			"headers": "postmen-api-key: 7707efb6-9db7-4780-a0f7-7ca56fe46834\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "postmen-api-key",
+					"value": "7707efb6-9db7-4780-a0f7-7ca56fe46834",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api.aftership.com/v4/trackings/'.$slug.'/'.$tracking_number",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4230a051-e18f-95eb-cf3f-3b93f19da7e4",
+			"data": [],
+			"dataMode": "raw",
+			"name": "Aftership Tracking",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1510229549795,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": ""
+		}
+	]
+}
