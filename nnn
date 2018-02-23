@@ -1,0 +1,62 @@
+ public function makeDynamicData()
+    {
+        $data = [
+            ['src_field_name'=> 'linked_to.name.type', 'target_field'=> 'new1517824102013', 'src_field_data_type'=> 'string', 'target_data_type'=> 'int'],
+            ['src_field_name'=> 'linked_to.id', 'target_field'=> 'new151785466565', 'src_field_data_type'=> 'number', 'target_data_type'=> 'int'],
+        ];
+        dump($data); dd();
+        $jsonData = [];
+        $dataTypeField = '';
+            // if($data->src_data_type=='Double' || strtolower($data->src_data_type)=='double')
+            foreach ($data->src_field_data as $datSource) {
+                $sourcName = $datSource->src_field_name;
+                if (strstr($sourcName, '.'))
+                    $sourcName = explode('.', $sourcName);
+
+                if (is_array($sourcName)) {
+                    $length = count($sourcName);
+                    $firstIndex = $sourcName[0];
+                    $previous_reference = "";
+
+                    if (isset($jsonData[$firstIndex])) {
+                        $obj = $jsonData[$firstIndex];
+                    } else
+                        $obj = new \stdClass();
+
+                    foreach ($sourcName as $k => $v) {
+                        if ($k == 0)
+                            continue;
+
+                        if (!$previous_reference) {
+                            if (!isset($obj->$v))
+                                $obj->$v = new \stdClass();
+                            if($length == 2){
+                                if ($k == $length - 1)
+                                    $obj->$v = (strtolower($datSource->src_data_type));
+                                $previous_reference = $obj->$v;
+                            }else{
+                                $previous_reference = $obj->$v;
+                            }
+
+                        } else {
+                            if ($k == $length - 1)
+                                $previous_reference->$v = (strtolower($datSource->src_data_type));
+                            else {
+                                if (!isset($previous_reference->$v))
+                                    $previous_reference->$v = new \stdClass();
+                                $previous_reference = $previous_reference->$v;
+                            }//..... end if-else() .....//
+                        }//..... end if() .....//
+                    }//..... end foreach() ......//
+
+                    $jsonData[$firstIndex] = $obj;
+                    $obj = "";
+                    $previous_reference = "";
+                } else {
+                    $jsonData[$sourcName] = (strtolower($datSource->src_data_type));
+                }//..... end if-else ....//
+            }
+
+
+        return $jsonData;
+    }
