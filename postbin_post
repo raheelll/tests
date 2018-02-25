@@ -1,0 +1,111 @@
+<?php
+// i want to get final array like this.
+$finalJson = '[
+    "status" => true,
+    "data" => [
+      "title" => "My first title",
+      "description" => "Here is my description",
+      "linked_to" =>  [
+        0 => [
+          "type" => "Contact",
+          "number" => "34223221"
+        ]
+      ],
+      "occupation" => [
+        "name" => "CEO"
+      ]
+    ]
+  ]';
+//   print_r(json_encode($finalJson,true));
+/////////////// start code///////////////
+// $formRequestFields = [
+//     "new140" => "false",
+//     "new124" => "My first title",
+//     "new125" => "Here is my description",
+//     "new126" => "Contact",
+//     "new129" => "34223221",
+//     "new130" => "CEO"
+// ];
+
+// $mappedArray = [
+//     0 =>  [
+//       "src_field" => "status",
+//       "target_field" => "new140",
+//       "src_field_data_type" => "string"
+//     ],
+//     1 => [
+//       "src_field" => "data.title",
+//       "target_field" => "new124",
+//       "src_field_data_type" => "string"
+//     ],
+//     2 =>  [
+//       "src_field" => "data.description",
+//       "target_field" => "new125",
+//       "src_field_data_type" => "string"
+//     ],
+//     3 =>  [
+//       "src_field" => "data.*linked_to.type",
+//       "target_field" => "new126",
+//       "src_field_data_type" => "string"
+//     ],
+// 	4 =>  [
+//       "src_field" => "data.*linked_to.number",
+//       "target_field" => "new129",
+//       "src_field_data_type" => "string"
+//     ],
+// 	5 =>  [
+//       "src_field" => "data.occupation.name",
+//       "target_field" => "new130",
+//       "src_field_data_type" => "string"
+//     ]
+// ]; 
+$formRequestFields = [
+  "new140" => "false",
+  "new124" => "My first title",
+  "new125" => "Here is my description",
+
+];
+
+$mappedArray = [
+  0 =>  [
+    "src_field" => "response.result.data.status",
+    "target_field" => "new140",
+    "src_field_data_type" => "string"
+  ],
+  1 => [
+    "src_field" => "response.result.data.title",
+    "target_field" => "new124",
+    "src_field_data_type" => "string"
+  ],
+  2 =>  [
+    "src_field" => "response.result.data.description",
+    "target_field" => "new125",
+    "src_field_data_type" => "string"
+  ]
+]; 
+///
+$finalJson = [];
+foreach ($mappedArray AS $change) {
+    $tree = explode('.', $change['src_field']);
+    $target = &$finalJson;
+    foreach ($tree AS $id=>$branch) {
+        if (isset($tree[$id-1]) && $tree[$id-1][0] == '*') {
+            if (empty($target)) $target = [];
+            if (count($target) && isset($target[count($target)-1]) && @!isset($target[count($target)-1][$branch])) {
+                $newTarget = &$target[count($target)-1][$branch];
+            } else {
+                $target[] = [$branch => NULL];
+                $newTarget = &$target[count($target)-1][$branch];
+            }
+        } else {
+            if ($branch[0] == '*')
+                $branch = substr($branch, 1);
+            if (!isset($target[$branch]))
+                $target[$branch] = [];
+            $newTarget = &$target[$branch];
+        }
+        $target = &$newTarget;
+    }
+    $target = $formRequestFields[$change['target_field']];
+}
+print_r($finalJson);
