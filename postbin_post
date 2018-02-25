@@ -1,5 +1,6 @@
 <?php
 // i want to get final array like this.
+// https://pastebin.com/4c1nt4s0
 $finalJson = '[
     "status" => true,
     "data" => [
