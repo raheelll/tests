@@ -1,4 +1,7 @@
- connection.query('SELECT * from v1_promotions where is_firebase =1 AND v1_promotions.batch_id = "' + batch_id + '"', function
+https://stackoverflow.com/questions/4838120/select-from-mysql-table-between-datetime-x-min-ago-and-datetime-x-min-ago
+
+
+connection.query('SELECT * from v1_promotions where is_firebase =1 AND v1_promotions.batch_id = "' + batch_id + '"', function
 			 (err, rows, fields) {
 
              if (rows.length > 0) {
