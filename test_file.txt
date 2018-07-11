@@ -1,3 +1,4 @@
+https://docs.google.com/document/d/14pJGMy8lI-ym5G0k-Mn2TfYK3yDoIFmx0cjIB-AZ0kc/edit
 https://stackoverflow.com/questions/4838120/select-from-mysql-table-between-datetime-x-min-ago-and-datetime-x-min-ago
 
 
